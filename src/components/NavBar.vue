@@ -33,7 +33,7 @@
       </button>
       <!-- Mobile Navbar -->
       <div
-        class="hidden flex-col gap-4 absolute inset-x-0 top-16 bg-amber-400 shadow-xl text-center text-lg p-6 items-center lg:flex lg:flex-row lg:static lg:shadow-none lg:justify-between lg:w-full"
+        class="opacity-0 flex-col flex gap-4 absolute inset-x-0 top-16 bg-amber-400 shadow-xl text-center text-lg p-6 items-center lg:flex lg:flex-row lg:static lg:shadow-none lg:justify-between lg:w-full transition duration-500 ease-in-out z-30"
         role="menubar"
         ref="menubar"
       >
@@ -59,8 +59,7 @@ const menubar = ref(false);
 
 const toggleNav = () => {
   isExpanded.value = !isExpanded.value;
-  menubar.value.classList.toggle("hidden");
-  menubar.value.classList.toggle("flex");
+  menubar.value.classList.toggle("opacity-0");
   menubar.value.setAttribute("aria-expanded", isExpanded.value);
 };
 </script>
